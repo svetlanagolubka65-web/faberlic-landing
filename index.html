@@ -122,6 +122,33 @@
     }
     .photo-placeholder span { font-size: 48px; margin-bottom: 12px; }
 
+    /* ── LINK HUB ── */
+    .linkhub { background: var(--light); padding: 60px 24px; }
+    .linkhub-list {
+      max-width: 480px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .linkhub-item {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--white);
+      border: 2px solid var(--rose-lt);
+      border-radius: 50px;
+      padding: 16px 24px;
+      text-decoration: none; color: var(--dark);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+    .linkhub-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--rose);
+      box-shadow: 0 10px 28px rgba(200,82,122,0.2);
+    }
+    .linkhub-icon { font-size: 24px; flex-shrink: 0; }
+    .linkhub-text { flex: 1; }
+    .linkhub-title { font-weight: 700; font-size: 15px; }
+    .linkhub-sub { font-size: 13px; color: var(--gray); margin-top: 2px; }
+    .linkhub-arrow { color: var(--rose); font-weight: 700; flex-shrink: 0; }
+
     /* ── STATS ── */
     .stats {
       background: var(--rose);
@@ -320,6 +347,40 @@
       </div>
     </div>
     <div class="hero-photo"></div>
+  </div>
+</section>
+
+<!-- LINK HUB -->
+<section class="linkhub" id="links">
+  <div class="section-inner">
+    <h2 class="section-title">Все <span>ссылки</span></h2>
+    <p class="section-sub">Сохрани это место — здесь всё, что нужно, в одном месте</p>
+    <div class="linkhub-list">
+      <a class="linkhub-item" href="https://t.me/svetlana_fabbot" target="_blank">
+        <span class="linkhub-icon">🤖</span>
+        <span class="linkhub-text">
+          <span class="linkhub-title">Написать боту</span>
+          <span class="linkhub-sub">t.me/svetlana_fabbot</span>
+        </span>
+        <span class="linkhub-arrow">→</span>
+      </a>
+      <a class="linkhub-item" href="https://t.me/nejroSvetlana" target="_blank">
+        <span class="linkhub-icon">📢</span>
+        <span class="linkhub-text">
+          <span class="linkhub-title">Канал: ИИ + Фаберлик</span>
+          <span class="linkhub-sub">t.me/nejroSvetlana</span>
+        </span>
+        <span class="linkhub-arrow">→</span>
+      </a>
+      <a class="linkhub-item" href="https://t.me/GolubkaSveta" target="_blank">
+        <span class="linkhub-icon">👤</span>
+        <span class="linkhub-text">
+          <span class="linkhub-title">Личный контакт</span>
+          <span class="linkhub-sub">t.me/GolubkaSveta</span>
+        </span>
+        <span class="linkhub-arrow">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
