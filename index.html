@@ -97,14 +97,14 @@
     }
     .btn-secondary:hover { background: var(--rose); color: var(--white); }
 
-    .hero-photo { flex: 0 0 340px; }
+    .hero-photo { flex: 0 0 420px; }
     .hero-photo {
-      width: 360px; height: 420px;
+      width: 420px; height: 500px;
       flex-shrink: 0;
       border-radius: 28px;
       background-image: url('photo.jpg.png');
       background-color: #F7E8EE;
-      background-size: contain;
+      background-size: auto 112%;
       background-position: center bottom;
       background-repeat: no-repeat;
       box-shadow: 0 24px 64px rgba(200,82,122,0.25);
@@ -323,7 +323,7 @@
 
     /* ── MOBILE ── */
     @media (max-width: 640px) {
-      .hero-photo { width: 300px; height: 360px; flex: 0 0 360px; margin: 0 auto; }
+      .hero-photo { width: 330px; height: 420px; flex: 0 0 420px; margin: 0 auto; }
       .photo-placeholder { width: 260px; height: 300px; }
       .about-inner { flex-direction: column; }
       .hero-btns { flex-direction: column; }
