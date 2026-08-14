@@ -202,10 +202,14 @@
     /* ── PATHS ── */
     .paths-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 28px;
+      max-width: 980px;
+      margin: 0 auto;
     }
     .path-card {
+      display: flex;
+      flex-direction: column;
       border-radius: var(--radius);
       padding: 36px 28px;
       text-align: center;
@@ -231,7 +235,7 @@
     .path-icon { font-size: 52px; margin-bottom: 16px; }
     .path-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
     .path-card p { color: var(--gray); font-size: 15px; margin-bottom: 24px; }
-    .path-list { list-style: none; text-align: left; margin-bottom: 28px; }
+    .path-list { flex: 1; list-style: none; text-align: left; margin-bottom: 28px; }
     .path-list li {
       padding: 8px 0;
       border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -322,6 +326,9 @@
     footer a { color: var(--rose); text-decoration: none; }
 
     /* ── MOBILE ── */
+    @media (max-width: 760px) {
+      .paths-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 640px) {
       .hero-photo { width: 330px; height: 420px; flex: 0 0 420px; margin: 0 auto; }
       .photo-placeholder { width: 260px; height: 300px; }
