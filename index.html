@@ -104,8 +104,8 @@
       border-radius: 28px;
       background-image: url('photo.jpg.png');
       background-color: #F7E8EE;
-      background-size: 200%;
-      background-position: 48% 22%;
+      background-size: contain;
+      background-position: center bottom;
       background-repeat: no-repeat;
       box-shadow: 0 24px 64px rgba(200,82,122,0.25);
       border: 5px solid var(--white);
@@ -220,6 +220,14 @@
       background: linear-gradient(135deg, #FFF5F0, #FEEEE8);
       border: 2px solid #F2D4C4;
     }
+    .path-card.discount {
+      background: linear-gradient(135deg, #FFF8E9, #FFF0D8);
+      border: 2px solid #F1D6A8;
+    }
+    .path-card.team {
+      background: linear-gradient(135deg, #F2F7FF, #E8F0FF);
+      border: 2px solid #C9D9F2;
+    }
     .path-icon { font-size: 52px; margin-bottom: 16px; }
     .path-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
     .path-card p { color: var(--gray); font-size: 15px; margin-bottom: 24px; }
@@ -239,6 +247,8 @@
       transition: opacity .2s;
     }
     .path-card.partner .path-btn { background: var(--coral); }
+    .path-card.discount .path-btn { background: #C98A3D; }
+    .path-card.team .path-btn { background: #5978A6; }
     .path-btn:hover { opacity: .85; }
 
     /* ── STEPS ── */
@@ -313,8 +323,8 @@
 
     /* ── MOBILE ── */
     @media (max-width: 640px) {
-      .hero-photo { flex: 0 0 100%; display: flex; justify-content: center; }
-      .hero-photo img, .photo-placeholder { width: 260px; height: 300px; }
+      .hero-photo { width: 300px; height: 360px; flex: 0 0 360px; margin: 0 auto; }
+      .photo-placeholder { width: 260px; height: 300px; }
       .about-inner { flex-direction: column; }
       .hero-btns { flex-direction: column; }
       .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
@@ -335,14 +345,14 @@
     <div class="hero-text">
       <div class="hero-badge">✨ Консультант Фаберлик</div>
       <h1>Красота и доход<br>с <span>Фаберлик</span></h1>
-      <p>Качественная косметика со скидкой до 32% — или возможность строить
-         собственный бизнес рядом с домом и семьёй. Выбор за тобой!</p>
+      <p>Подбор и заказ продукции, добровольная регистрация со скидкой,
+         знакомство с возможностями команды и обучение для тех, кто уже зарегистрирован.</p>
       <div class="hero-btns">
-        <a href="https://t.me/svetlana_fabbot" class="btn-primary" target="_blank">
-          🤖 Написать боту
+        <a href="#paths" class="btn-primary">
+          ✨ Выбрать свой путь
         </a>
-        <a href="#paths" class="btn-secondary">
-          Узнать больше ↓
+        <a href="#catalog" class="btn-secondary">
+          Актуальный каталог ↓
         </a>
       </div>
     </div>
@@ -392,12 +402,12 @@
       <div class="stat-label">партнёров в команде</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">32%</div>
-      <div class="stat-label">скидка для клиентов</div>
+      <div class="stat-num">4</div>
+      <div class="stat-label">понятных маршрута</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">1500+</div>
-      <div class="stat-label">продуктов в каталоге</div>
+      <div class="stat-num">0</div>
+      <div class="stat-label">обязательных регистраций</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">24/7</div>
@@ -439,40 +449,140 @@
 <!-- PATHS -->
 <section id="paths">
   <div class="section-inner">
-    <h2 class="section-title">Что тебя <span>привело сюда?</span></h2>
-    <p class="section-sub">Выбери свой путь — я помогу с каждым шагом</p>
+    <h2 class="section-title">Выберите <span>свой путь</span></h2>
+    <p class="section-sub">Четыре отдельных входа — без давления и лишних шагов</p>
     <div class="paths-grid">
 
       <div class="path-card client">
         <div class="path-icon">🛍</div>
-        <h3>Хочу продукты со скидкой</h3>
-        <p>Качественная косметика, одежда и товары для здоровья по цене ниже рынка</p>
+        <h3>Заказать у Светланы</h3>
+        <p>Подобрать продукцию и оформить заказ лично у Светланы</p>
         <ul class="path-list">
-          <li>Скидка 15–32% на все продукты</li>
-          <li>Более 1500 наименований</li>
-          <li>Доставка по всей России и Беларуси</li>
-          <li>Персональный подбор от Светланы</li>
+          <li>Регистрация не обязательна</li>
+          <li>Помощь с подбором</li>
+          <li>Актуальный каталог через бота</li>
+          <li>Личная связь со Светланой</li>
         </ul>
-        <a href="https://t.me/svetlana_fabbot" class="path-btn" target="_blank">
-          🎁 Получить скидку
+        <a href="https://t.me/svetlana_fabbot?start=order" class="path-btn" target="_blank">
+          🛍 Подобрать и заказать
+        </a>
+      </div>
+
+      <div class="path-card discount">
+        <div class="path-icon">🎁</div>
+        <h3>Покупать со скидкой</h3>
+        <p>Добровольно зарегистрироваться через официальный сайт Faberlic</p>
+        <ul class="path-list">
+          <li>Преимущества регистрации</li>
+          <li>Реферальная ссылка Светланы</li>
+          <li>Переход на официальный Faberlic</li>
+          <li>Можно вернуться к заказу без регистрации</li>
+        </ul>
+        <a href="https://t.me/svetlana_fabbot?start=discount" class="path-btn" target="_blank">
+          🎁 Узнать о скидке
         </a>
       </div>
 
       <div class="path-card partner">
         <div class="path-icon">💼</div>
-        <h3>Хочу свой бизнес</h3>
-        <p>Гибкий доход без вложений, без склада, без обязательных планов</p>
+        <h3>Дополнительный доход</h3>
+        <p>Сначала пройти квиз и только потом решить, интересна ли команда</p>
         <ul class="path-list">
-          <li>Доход от 5 000 ₽ в первый месяц</li>
-          <li>Работа из дома, в удобное время</li>
+          <li>Короткий квиз</li>
+          <li>Персональный результат</li>
+          <li>Знакомство с возможностями</li>
           <li>Поддержка и обучение от Светланы</li>
-          <li>Рост вместе с командой</li>
         </ul>
-        <a href="https://t.me/svetlana_fabbot" class="path-btn" target="_blank">
-          🚀 Узнать о бизнесе
+        <a href="https://t.me/svetlana_fabbot?start=income" class="path-btn" target="_blank">
+          🧭 Пройти квиз
         </a>
       </div>
 
+      <div class="path-card team">
+        <div class="path-icon">🎓</div>
+        <h3>Я уже в команде</h3>
+        <p>Обучение и поддержка для зарегистрированных участников</p>
+        <ul class="path-list">
+          <li>Школа новичка</li>
+          <li>Материалы и мини-тесты</li>
+          <li>AI-помощник</li>
+          <li>Связь со Светланой</li>
+        </ul>
+        <a href="https://t.me/svetlana_fabbot?start=team" class="path-btn" target="_blank">
+          🎓 Открыть обучение
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT CATALOG -->
+<section class="linkhub" id="catalog">
+  <div class="section-inner">
+    <h2 class="section-title">Всегда <span>актуально</span></h2>
+    <p class="section-sub">Ассортимент и акции меняются каждый каталог, поэтому на сайте нет устаревающих списков товаров</p>
+    <div class="linkhub-list">
+      <a class="linkhub-item" href="https://faberlic.by/ru/ru/catalogs" target="_blank" rel="noopener">
+        <span class="linkhub-icon">📖</span>
+        <span class="linkhub-text">
+          <span class="linkhub-title">Актуальный каталог</span>
+          <span class="linkhub-sub">Цифровые каталоги на официальном сайте Faberlic</span>
+        </span>
+        <span class="linkhub-arrow">→</span>
+      </a>
+      <a class="linkhub-item" href="https://t.me/nejroSvetlana" target="_blank">
+        <span class="linkhub-icon">📢</span>
+        <span class="linkhub-text">
+          <span class="linkhub-title">Новинки и мои рекомендации</span>
+          <span class="linkhub-sub">Telegram-канал Светланы</span>
+        </span>
+        <span class="linkhub-arrow">→</span>
+      </a>
+      <a class="linkhub-item" href="https://t.me/svetlana_fabbot?start=order" target="_blank">
+        <span class="linkhub-icon">✨</span>
+        <span class="linkhub-text">
+          <span class="linkhub-title">Помоги подобрать</span>
+          <span class="linkhub-sub">Опишите задачу боту</span>
+        </span>
+        <span class="linkhub-arrow">→</span>
+      </a>
+      <a class="linkhub-item" href="https://t.me/GolubkaSveta" target="_blank">
+        <span class="linkhub-icon">💬</span>
+        <span class="linkhub-text">
+          <span class="linkhub-title">Хочу заказать</span>
+          <span class="linkhub-sub">Написать Светлане лично</span>
+        </span>
+        <span class="linkhub-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE -->
+<section id="interactive">
+  <div class="section-inner">
+    <h2 class="section-title">Попробуйте Faberlic <span>по-новому</span></h2>
+    <p class="section-sub">Интерактив помогает выбрать подходящий путь без давления</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="path-icon">🧭</div>
+        <h3>Квиз для партнёра</h3>
+        <p>Персональный результат до знакомства с командой и регистрации.</p>
+        <a href="https://t.me/svetlana_fabbot?start=income" class="path-btn" target="_blank">Пройти квиз</a>
+      </div>
+      <div class="step-card">
+        <div class="path-icon">✨</div>
+        <h3>Подбор для покупателя</h3>
+        <p>Расскажите, что ищете, и передайте запрос Светлане.</p>
+        <a href="https://t.me/svetlana_fabbot?start=order" class="path-btn" target="_blank">Начать подбор</a>
+      </div>
+      <div class="step-card">
+        <div class="path-icon">🎮</div>
+        <h3>Игры для команды</h3>
+        <p>Первый мини-тест уже в Школе; Memory Faberlic можно добавить позже.</p>
+        <a href="https://t.me/svetlana_fabbot?start=team" class="path-btn" target="_blank">Открыть Школу</a>
+      </div>
     </div>
   </div>
 </section>
@@ -481,22 +591,22 @@
 <section class="steps">
   <div class="section-inner">
     <h2 class="section-title">Как <span>начать</span> — 3 шага</h2>
-    <p class="section-sub">Всё просто — бот проведёт тебя сам</p>
+    <p class="section-sub">Сначала выбор и знакомство — регистрация только по вашему решению</p>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h3>Напиши боту</h3>
-        <p>Нажми кнопку «Написать боту» и отправь /start</p>
+        <h3>Выберите маршрут</h3>
+        <p>Заказ, скидка, дополнительный доход или обучение команды</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h3>Ответь на 3 вопроса</h3>
-        <p>Бот поймёт что тебе нужно — косметика или бизнес</p>
+        <h3>Познакомьтесь с возможностями</h3>
+        <p>Бот покажет только тот сценарий, который вы выбрали</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h3>Получи результат</h3>
-        <p>Скидку и каталог — или предложение присоединиться к команде</p>
+        <h3>Примите решение</h3>
+        <p>Закажите без регистрации или добровольно выберите скидку и команду</p>
       </div>
     </div>
   </div>
